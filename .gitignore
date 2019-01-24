@@ -1,2 +1,4 @@
 .vscode/
 private.json
+backup-*/
+__pycache__/
