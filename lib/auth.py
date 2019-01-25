@@ -1,8 +1,7 @@
-from boxsdk import Client
 from boxsdk.auth import RedisManagedOAuth2
 import json
 
-def get_authenticated_client():
+def get_oauth():
     with open('private.json', 'r') as f:
         auth = json.loads(f.read())
 
@@ -16,4 +15,4 @@ def get_authenticated_client():
     print("URL:\n", auth_url)
     code = input('Code\n>')
     oauth.authenticate(code)
-    return Client(oauth)
+    return oauth
